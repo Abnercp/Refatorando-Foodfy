@@ -1,0 +1,35 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+    <div class="intro">
+        <div class="intro-text">
+            <h1>As melhores receitas</h1>
+            <p>Aprenda a construir os melhores pratos com receitas criadas pro profissionais do mundo inteiro.</p>
+        </div>
+        <div class="intro-img">
+            <img src="/assets/chef.png" alt="Chefe">
+        </div>
+    </div>
+
+    <section>
+        <div class="cards">
+
+            {% for access in accesses %}
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ access.image }}" alt="Imagem de {{ access.title }}">
+                    </div>
+                    <div class="card-content">
+                        <p>{{ access.title }}</p>
+                    </div>
+                    <div class="card-info">
+                        <span>por
+                            {{ access.author }}
+                        </span>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </section>
+{% endblock %}
